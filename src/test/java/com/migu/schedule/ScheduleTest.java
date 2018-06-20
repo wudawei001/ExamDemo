@@ -32,14 +32,14 @@ public class ScheduleTest
         }
     }
     
-    @Test
+   @Test
     public void testInit()
     {
         int actual = schedule.init();
         Assert.assertEquals(ReturnCodeKeys.E001, actual);
     }
     
-    @Test
+     @Test
     public void testRegisterNode1()
     {
         int actual = schedule.init();
@@ -47,7 +47,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E003, actual);
     }
     
-    @Test
+      @Test
     public void testRegisterNode2()
     {
         int actual = schedule.init();
@@ -55,7 +55,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E004, actual);
     }
     
-    @Test
+      @Test
     public void testRegisterNode3()
     {
         int actual = schedule.init();
@@ -64,7 +64,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E005, actual);
     }
     
-    @Test
+       @Test
     public void testUnregisterNode1()
     {
         int actual = schedule.init();
@@ -73,7 +73,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E006, actual);
     }
     
-    @Test
+      @Test
     public void testUnregisterNode2()
     {
         int actual = schedule.init();
@@ -82,7 +82,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E007, actual);
     }
     
-    @Test
+        @Test
     public void testAddTask0()
     {
         int actual = schedule.init();
@@ -91,7 +91,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E008, actual);
     }
     
-    @Test
+        @Test
     public void testAddTask1()
     {
         int actual = schedule.init();
@@ -100,7 +100,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E009, actual);
     }
 
-    @Test
+        @Test
     public void testAddTask2()
     {
         int actual = schedule.init();
@@ -110,7 +110,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E010, actual);
     }
     
-    @Test
+         @Test
     public void testDeleteTask0()
     {
         int actual = schedule.init();
@@ -120,7 +120,7 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E011, actual);
     }
     
-    @Test
+          @Test
     public void testDeleteTask1()
     {
         int actual = schedule.init();
@@ -130,13 +130,13 @@ public class ScheduleTest
         Assert.assertEquals(ReturnCodeKeys.E012, actual);
     }
 
-    @Test
+         @Test
     public void testScheduleTask0()
     {
         int actual = schedule.init();
         schedule.registerNode(7);
-        schedule.registerNode(1);
-        schedule.registerNode(6);
+        schedule.registerNode(3);
+         schedule.registerNode(6);
         
         schedule.addTask(1, 2);
         schedule.addTask(2, 14);
@@ -168,8 +168,8 @@ public class ScheduleTest
         assertPlanEqual(expecteds, tasks);
     }
     
-    @Test
-    public void testScheduleTask1()
+         @Test
+         public void testScheduleTask1()
     {
         int actual = schedule.init();
         actual = schedule.registerNode(1);
