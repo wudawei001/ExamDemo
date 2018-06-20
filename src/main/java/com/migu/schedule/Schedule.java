@@ -92,7 +92,6 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
     	}
     	else
     	{
-    		System.out.println("null");
     		noAdd = false;
     	}
     	if(noAdd)
@@ -169,6 +168,7 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
        {
     	   return ReturnCodeKeys.E016;
        }
+       
        for(TaskInfo taskList: taskInfoList)
        {
     	   for(TaskInfo task: tasks)
@@ -234,9 +234,6 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
      * @param nodeId
      * @return
      */
-    
- 
-    
 	public int maxNode() {
 		int max = 0;
 		if (null != taskInfoList && taskInfoList.size() > 0) {
