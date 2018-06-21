@@ -21,6 +21,7 @@ private static	List<TaskInfo>  taskInfoList  = new ArrayList<TaskInfo>();
 
 private static List<Consumption>   totalConsumption = new ArrayList<Consumption>();
 
+private static  Schedule schedule = new Schedule();
     public int init() {
     	//清理所以的节点
         clear();
@@ -92,6 +93,7 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
     	}
     	else
     	{
+    		System.out.println("null");
     		noAdd = false;
     	}
     	if(noAdd)
@@ -147,9 +149,9 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
     	for(int i= 0 ; i < totalConsumption.size() ; i ++ )
     			
     	{
-    		for(int j = i+1; j < totalConsumption.size() ; )
+    		for(int j= i+1; j < totalConsumption.size() ; j ++ )
     		{
-    			if(totalConsumption.get(i).getConsumption() - totalConsumption.get(j).getConsumption()<threshold)
+    			if(totalConsumption.get(i).getConsumption() - totalConsumption.get(j).getConsumption()>threshold)
     			{
     				 return ReturnCodeKeys.E013;
     			}
@@ -158,7 +160,11 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
     		        return ReturnCodeKeys.E014;
     			}
     		}
+    		
     	}
+    	
+    	
+    	
         return ReturnCodeKeys.E014;
     }
 
@@ -168,7 +174,6 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
        {
     	   return ReturnCodeKeys.E016;
        }
-       
        for(TaskInfo taskList: taskInfoList)
        {
     	   for(TaskInfo task: tasks)
@@ -179,7 +184,7 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
     		   }
            } 
        }
-        return ReturnCodeKeys.E015;
+        return ReturnCodeKeys.E000;
     }
     /**
      * 清除所以节点
@@ -234,6 +239,9 @@ private static List<Consumption>   totalConsumption = new ArrayList<Consumption>
      * @param nodeId
      * @return
      */
+    
+ 
+    
 	public int maxNode() {
 		int max = 0;
 		if (null != taskInfoList && taskInfoList.size() > 0) {
